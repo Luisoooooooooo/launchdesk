@@ -58,4 +58,31 @@ export class WeatherService {
     return weatherConditions[weatherCodeValue] || 'Unknown weather';
   }
 
+  getWeatherIcon(): string {
+    const weatherCodeValue = this.weatherCode();
+    if (weatherCodeValue === null) return 'fa-solid fa-question';
+
+    const weatherIcons: { [key: number]: string } = {
+      0: 'fa-regular fa-sun-bright',
+      1: 'fa-regular fa-sun-bright',
+      2: 'fa-regular fa-cloud-sun',
+      3: 'fa-regular fa-cloud',
+      45: 'fa-regular fa-smog',
+      48: 'fa-regular fa-smog',
+      51: 'fa-regular fa-cloud-rain',
+      53: 'fa-regular fa-cloud-rain',
+      55: 'fa-regular fa-cloud-showers-heavy',
+      61: 'fa-regular fa-cloud-rain',
+      63: 'fa-regular fa-cloud-rain',
+      65: 'fa-regular fa-cloud-showers-heavy',
+      80: 'fa-regular fa-cloud-showers-heavy',
+      81: 'fa-regular fa-cloud-showers-heavy',
+      82: 'fa-regular fa-cloud-showers-heavy',
+      95: 'fa-regular fa-bolt',
+      96: 'fa-regular fa-bolt',
+      99: 'fa-regular fa-bolt'
+    };
+
+    return weatherIcons[weatherCodeValue] || 'fa-solid fa-question';
+  }
 }

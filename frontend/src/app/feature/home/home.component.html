@@ -1,3 +1,3 @@
 <h3>{{greetingService.getGreetingMessage()}} {{nameService.getName()}}</h3>
 <h4>{{weekdayService.getWeekDay()}}, {{timeService.getTime()}} {{timeService.getPeriodIndicator()}} </h4>
-<h4>{{weatherService.getTemperature()}}°C —  {{weatherService.getWeatherCondition()}} </h4>
+<h4>{{weatherService.getTemperature()}}°C — <i [class]="weatherService.getWeatherIcon()"></i>  {{weatherService.getWeatherCondition()}} </h4>
